@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>O Que Nasce do Ovo? — Narrativas</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logos" aria-label="Logomarcas institucionais">
+        <img src="imagensLOGO-UESB.png" alt="Logo UESB" class="logo" />
+        <img src="imagensLOGO-CAPES.png" alt="Logo CAPES" class="logo" />
+        <img src="imagensLOGO-PIBID.png" alt="Logo PIBID Pedagogia" class="logo" />
+      </div>
+
+      <div class="header-text">
+        <h1>O Que Nasce do Ovo?</h1>
+        <p class="subtitle">Narrativas da Educação Infantil — Escola Jorge Luiz</p>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="site-main">
+    <section class="container section intro" aria-labelledby="titulo-intro">
+      <h2 id="titulo-intro">Sobre as narrativas</h2>
+
+      <p>
+        Este espaço reúne narrativas produzidas no contexto do PIBID Pedagogia (UESB),
+        inspiradas na sensibilidade do cotidiano e das vozes das crianças.
+      </p>
+
+      <p>
+        Aqui, as narrativas aparecem em sequência visual (carrossel),
+        acessadas via QR Code no livro de sistematização.
+      </p>
+    </section>
+
+    <section class="container section duplas" aria-labelledby="titulo-duplas">
+      <h2 id="titulo-duplas">Duplas</h2>
+
+      <div class="duplas-grid">
+        <article class="dupla-card">
+          <img src="duplasdupla1capa.jpg"
+               alt="Foto de identificação da Dupla 1"
+               class="dupla-foto" />
+          <div class="dupla-info">
+            <h3>Dupla 1</h3>
+            <p><strong>Dia/Turno:</strong> (preencher)</p>
+            <p><strong>Nomes:</strong> (preencher)</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section narrativas" aria-labelledby="titulo-narrativas">
+      <h2 id="titulo-narrativas">Narrativas</h2>
+
+      <p class="hint">Escolha uma dupla e navegue pelas narrativas.</p>
+
+      <div class="dupla-buttons" role="tablist" aria-label="Selecionar dupla">
+        <button class="btn-dupla ativo" type="button" data-dupla="dupla1" aria-selected="true">
+          Dupla 1
+        </button>
+        <button class="btn-dupla" type="button" data-dupla="dupla2" aria-selected="false">
+          Dupla 2
+        </button>
+        <button class="btn-dupla" type="button" data-dupla="dupla3" aria-selected="false">
+          Dupla 3
+        </button>
+        <button class="btn-dupla" type="button" data-dupla="dupla4" aria-selected="false">
+          Dupla 4
+        </button>
+      </div>
+
+      <!-- CARROSSEL DUPLA 1 -->
+      <div class="carrossel-container" data-dupla="dupla1">
+        <button class="seta esquerda" aria-label="Narrativa anterior">&#8592;</button>
+
+        <div class="carrossel-track">
+          <img class="carrossel-item ativo"
+               src="narrativasdupla1narrativa01.jpg"
+               alt="Narrativa 01 — Dupla 1" />
+
+          <img class="carrossel-item"
+               src="narrativasdupla1narrativa02.jpg"
+               alt="Narrativa 02 — Dupla 1" />
+        </div>
+
+        <button class="seta direita" aria-label="Próxima narrativa">&#8594;</button>
+      </div>
+
+      <!-- Containers vazios (preenche depois) -->
+      <div class="carrossel-container escondido" data-dupla="dupla2">
+        <button class="seta esquerda">&#8592;</button>
+        <div class="carrossel-track"></div>
+        <button class="seta direita">&#8594;</button>
+      </div>
+
+      <div class="carrossel-container escondido" data-dupla="dupla3">
+        <button class="seta esquerda">&#8592;</button>
+        <div class="carrossel-track"></div>
+        <button class="seta direita">&#8594;</button>
+      </div>
+
+      <div class="carrossel-container escondido" data-dupla="dupla4">
+        <button class="seta esquerda">&#8592;</button>
+        <div class="carrossel-track"></div>
+        <button class="seta direita">&#8594;</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 PIBID Pedagogia — UESB</p>
+      <p class="footer-names">
+        Coordenadora: Larissa Monique de Souza Almeida • Supervisora: Milane Oliveira
+      </p>
+      <div class="footer-logos"></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
