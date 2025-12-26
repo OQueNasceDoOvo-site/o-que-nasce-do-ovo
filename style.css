@@ -1,0 +1,457 @@
+/* =========================
+   PALETA DE CORES (LIVRO)
+========================= */
+:root{
+  --cor-fundo: #CEEEF0;        /* céu */
+  --cor-surface: #F3EBD2;      /* casca de ovo */
+  --cor-texto: #15241E;        /* texto principal */
+  --cor-primaria: #506F45;     /* verde folha */
+  --cor-secundaria: #C5BB68;   /* gema/areia */
+  --cor-apoio: #7BB29A;        /* verde suave */
+  --cor-destaque: #DF7E6A;     /* coral lúdico */
+
+  --radius: 18px;
+  --sombra: 0 10px 28px rgba(0,0,0,0.08);
+  --fonte: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* =========================
+   RESET BÁSICO
+========================= */
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: var(--fonte);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================
+   CONTAINER CENTRAL
+========================= */
+.container{
+  width: min(100% - 2rem, 960px);
+  margin-inline: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+.site-header{
+  background: var(--cor-apoio);
+  padding: 1.5rem 0;
+}
+
+.header-inner{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logos{
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+}
+
+.logo{
+  height: 56px;
+  width: auto;
+  background: rgba(255,255,255,0.6);
+  padding: .35rem;
+  border-radius: 12px;
+}
+
+.header-text h1{
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.subtitle{
+  margin: .2rem 0 0;
+  font-size: 1rem;
+  opacity: .9;
+}
+
+.subtitle.turma{
+  font-style: italic;
+}
+
+/* =========================
+   SEÇÕES GERAIS
+========================= */
+.site-main{
+  padding: 2rem 0 3rem;
+  position: relative;
+}
+
+.section{
+  background: var(--cor-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.section h2{
+  margin-top: 0;
+  color: var(--cor-primaria);
+}
+
+/* =========================
+   TEXTO INICIAL
+========================= */
+.intro p{
+  text-align: justify;
+}
+
+/* =========================
+   DUPLAS
+========================= */
+.semestres{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.semestre-card{
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1rem;
+  border-left: 6px solid var(--cor-secundaria);
+}
+
+.semestre-card h3{
+  margin-top: 0;
+  color: var(--cor-primaria);
+}
+
+/* =========================
+   BOTÕES DAS DUPLAS
+========================= */
+.dupla-buttons{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-bottom: 1rem;
+}
+
+.btn-dupla{
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-apoio));
+  color: #fff;
+  border: none;
+  padding: .6rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.btn-dupla.ativo{
+  outline: 3px solid var(--cor-secundaria);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   CARROSSEL
+========================= */
+.carrossel-container{
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  height: 460px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+}
+
+.carrossel-track{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carrossel-item{
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+  display: none;
+  cursor: pointer;
+}
+
+.carrossel-item.ativo{
+  display: block;
+}
+
+/* Setas */
+.seta{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--cor-primaria);
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.seta.esquerda{ left: 10px; }
+.seta.direita{ right: 10px; }
+
+.seta:hover{
+  background: var(--cor-destaque);
+}
+
+/* =========================
+   DIVISOR ENTRE SEMESTRES
+========================= */
+.divisor{
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2rem;
+  color: var(--cor-secundaria);
+}
+
+/* =========================
+   DESENHOS LATERAIS
+========================= */
+.decor{
+  position: absolute;
+  width: 220px;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.decor-left{ left: 10px; }
+.decor-right{ right: 10px; }
+
+.decor-top{ top: 120px; }
+.decor-mid{ top: 50%; transform: translateY(-50%); }
+.decor-bottom{ bottom: 80px; }
+
+/* =========================
+   FOOTER
+========================= */
+.site-footer{
+  background: var(--cor-primaria);
+  color: #fff;
+  padding: 1.5rem 0;
+}
+
+.footer-inner{
+  text-align: center;
+  font-size: .95rem;
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.lightbox.ativo{
+  display: flex;
+}
+
+.lightbox-content img{
+  max-width: 90vw;
+  max-height: 80vh;
+}
+
+.lightbox-voltar{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: var(--cor-destaque);
+  color: #fff;
+  border: none;
+  padding: .6rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.lightbox-seta{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.lightbox-seta.esq{ left: 20px; }
+.lightbox-seta.dir{ right: 20px; }
+
+/* =========================
+   RESPONSIVO (CELULAR)
+========================= */
+@media (max-width: 768px){
+  .decor{
+    display: none;
+  }
+
+  .carrossel-container{
+    height: 320px;
+  }
+
+  .header-inner{
+    justify-content: center;
+    text-align: center;
+  }
+}
+/* =========================
+   TÍTULOS DAS DUPLAS (NARRATIVAS)
+========================= */
+.titulo-dupla{
+  margin: 1.2rem 0 .6rem;
+  color: var(--cor-texto);
+  font-size: 1.15rem;
+}
+
+/* Linha divisória entre carrosseis (dentro do semestre) */
+.divisor-linha{
+  height: 2px;
+  background: rgba(21, 36, 30, 0.15);
+  border-radius: 999px;
+  margin: 1.6rem auto;
+  width: min(100%, 760px);
+}
+/* =========================
+   LOGOS DE APOIO (RODAPÉ)
+========================= */
+.logos-apoio{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.logos-apoio img{
+  height: 48px;
+  width: auto;
+  background: rgba(255,255,255,0.85);
+  padding: .4rem .6rem;
+  border-radius: 10px;
+}
+/* =========================
+   CURSOR ORNITORRINCO (SITE TODO)
+========================= */
+
+/* Aplica em tudo */
+*{
+  cursor: url("./imagens-cursor/cursor-ornitorrinco.png") 16 16, auto;
+}
+
+/* Garante em elementos clicáveis (alguns navegadores insistem no pointer) */
+a, button, .seta, .btn-dupla, .carrossel-item, .lightbox-voltar, .lightbox-seta{
+  cursor: url("./imagens-cursor/cursor-ornitorrinco.png") 16 16, pointer;
+}
+/* =========================
+   ÍCONE MAIOR SEM AUMENTAR A BARRA
+   (substitui as regras duplicadas)
+========================= */
+
+/* Mantém a barra como está, só habilita o posicionamento do ícone */
+.barra-dupla{
+  position: relative;
+}
+
+/* Empurra o texto um pouco pra direita pra não ficar em cima do ícone */
+.barra-dupla span{
+  display: inline-block;
+  padding-left: 2.6rem; /* ajuste fino se precisar */
+}
+
+/* Ícone maior, mas fora do "cálculo" da altura do flex */
+.icone-ornitorrinco{
+  height: 2.4em; /* AQUI você controla o tamanho do ornitorrinco */
+  width: auto;
+
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+/* =========================
+   BARRA DE FUNDO — NOMES DAS DUPLAS (CENTRALIZADA)
+========================= */
+.titulo-dupla{
+  display: table;              /* truque clássico de centralização */
+  margin: 1.2rem auto 0.6rem;  /* auto centraliza */
+  padding: 0.4rem 1.2rem;
+
+  background-color: var(--cor-secundaria); /* gema/areia */
+  color: var(--cor-texto);
+
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+}
+/* =========================
+   BARRA DO NOME DAS DUPLAS
+   (referência na CAIXA do carrossel)
+========================= */
+.titulo-dupla{
+  display: block;
+  width: min(760px, 100%);   /* mesma largura de referência do carrossel */
+  margin: 1.2rem auto 0.8rem;
+  padding: 0.6rem 1.2rem;
+
+  background: linear-gradient(
+    135deg,
+    rgba(197,187,104,0.60),  /* cor-secundaria */
+    rgba(123,178,154,0.35)   /* cor-apoio */
+  );
+
+  color: var(--cor-texto);
+  text-align: center;
+
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 1.1rem;
+
+  border: 2px solid rgba(80,111,69,0.20); /* verde folha suave */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
